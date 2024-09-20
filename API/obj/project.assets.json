@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\Full-Stack-Project\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Documents\\GitHub\\Full-Stack-Project\\Full-Stack-Project\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\Full-Stack-Project\\API\\API.csproj",
+      "projectPath": "C:\\Users\\HP\\Documents\\GitHub\\Full-Stack-Project\\Full-Stack-Project\\API\\API.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\Full-Stack-Project\\API\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Documents\\GitHub\\Full-Stack-Project\\Full-Stack-Project\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
