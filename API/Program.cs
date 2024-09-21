@@ -1,7 +1,8 @@
 using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 class Program
 {
@@ -30,6 +31,12 @@ class Program
         }
 
         app.UseHttpsRedirection();
+        
+        app.UseRouting();
+        app.UseAuthorization();
+        
+        app.MapControllers(); // Add this line
+
 
         var summaries = new[]
         {
