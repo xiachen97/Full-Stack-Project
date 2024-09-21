@@ -1,4 +1,7 @@
 using System;
+using API.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 class Program
 {
@@ -9,6 +12,13 @@ class Program
         // Add services to the container.
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        // Configure the DataContext with a connection string to a database
+        builder.Services.AddDbContext<DataContext>(
+            options =>options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+        // Add services like controllers, etc.
+        builder.Services.AddControllers();
 
         var app = builder.Build();
 
