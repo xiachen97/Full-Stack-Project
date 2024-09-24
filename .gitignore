@@ -1,3 +1,9 @@
 API/bin
 API/obj
 
+.vs/
+obj/Debug/net8.0/Api.Translators.csproj.AssemblyReference.cache
+*/obj/*
+client-src/angular-client/.angular/cache/18.2.5/angular-client/.tsbuildinfo
+client-src/angular-client/.angular/
+*/bin/*
