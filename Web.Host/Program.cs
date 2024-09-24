@@ -20,6 +20,20 @@ public class Program
 
         // Add services like controllers, etc.
         builder.Services.AddControllers();
+        builder.Services.Scan(scan =>
+        {
+            scan.FromCallingAssembly()
+                .FromAssemblies(
+                    typeof(Program).Assembly, typeof(Business.Providers.IUserProvider).Assembly, 
+                    typeof(Api.Translators.User.IUserTranslator).Assembly,
+                    typeof(Business.Translators.User.IUserTranslator).Assembly,
+                    typeof(Business.Providers.IUserProvider).Assembly,
+                    typeof(Data.Providers.IUserDataProvider).Assembly)
+                .AddClasses()
+                .AsMatchingInterface((service, filter) =>
+                    filter.Where(implementation => implementation.Name.Equals($"I{service.Name}", StringComparison.OrdinalIgnoreCase)))
+                .WithTransientLifetime();
+        });
         builder.Services.AddAutoMapper(typeof(Api.Translators.User.IUserTranslator).Assembly, typeof(Business.Translators.User.IUserTranslator).Assembly);
 
         var app = builder.Build();
