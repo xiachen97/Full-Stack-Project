@@ -1,3 +1,7 @@
 API/bin
 API/obj
 
+.vs/
+API/API.csproj.user
+API/fullstackproject.db-shm
+API/fullstackproject.db-wal
