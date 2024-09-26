@@ -3,11 +3,11 @@ name: ci-build
 on:
   workflow_dispatch:
   push:
-    branches: [ main, 'releases/**' ]
+    branches: [ main, 'releases/**', error_test_branch ]
     paths:
     - '/**'
   pull_request:
-    branches: [ main, 'releases/**' ]
+    branches: [ main, 'releases/**', error_test_branch ]
     paths:
     - '/**'
 
