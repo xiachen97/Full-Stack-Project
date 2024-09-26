@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore; // For DbContext, DbContextOptions, DbSet
-using API.Entities;//Reference the namespace where the AppUser class is located
+usifbfnrnng API.Entities;//Reference the namespace where the AppUser class is located
 
 namespace API.Data
 {
