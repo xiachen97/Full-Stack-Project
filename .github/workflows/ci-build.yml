@@ -1,0 +1,37 @@
+name: ci-build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, 'releases/**' ]
+    paths:
+    - '/**'
+  pull_request:
+    branches: [ main, 'releases/**' ]
+    paths:
+    - '/**'
+
+defaults:
+  run:
+    working-directory: ./
+
+jobs:
+  ci-build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0.x' # SDK Version to use; x will use the latest version of the 8.0.x channel
+    
+    - name: Restore dependencies
+      run: dotnet restore Full-Stack-Project.sln
+    
+    - name: Build
+      run: dotnet build Full-Stack-Project.sln --no-restore --configuration Debug
+    
+
