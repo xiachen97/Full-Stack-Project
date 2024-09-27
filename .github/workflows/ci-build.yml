@@ -23,6 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    # Setup for .NET backend
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
@@ -33,5 +34,23 @@ jobs:
     
     - name: Build
       run: dotnet build Full-Stack-Project.sln --no-restore --configuration Debug
+        
     
+    
+      # Setup Node.js for Angular frontend
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.15.1' 
 
+    - name: Install Angular dependencies
+      run: npm install
+      working-directory: ./client 
+
+    - name: Build Angular application
+      run: npm build
+      working-directory: ./client 
+
+    - name: Run Angular tests
+      run: npm test
+      working-directory: ./client 
